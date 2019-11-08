@@ -1,0 +1,63 @@
+<main class="login-form">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="card">
+                    <!-- <div class="card-header">Register</div> -->
+                    <div class="card-body">
+                        <form name="registerForm" [formGroup]="registerForm">
+                            <div class="text-danger" *ngIf="errroMsg">
+                                {{errroMsg}}
+                            </div>
+                            <div class="form-group row">
+                                <label for="email_address" class="col-md-4 col-form-label text-md-right">User Name</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="userName" class="form-control" formControlName="userName" name="email-address" required autofocus>
+                                    <div class="text-danger" *ngIf="registerForm.controls['userName'].hasError('required')&&(registerForm.controls.userName?.dirty ||registerForm.controls.userName?.touched)">
+                                        User Name is required.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="mobile" class="col-md-4 col-form-label text-md-right">Mobile Number</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="mobile" class="form-control" formControlName="mobile" name="mobile" required autofocus>
+                                    <div class="text-danger" *ngIf="registerForm.controls['mobile'].hasError('required')&&(registerForm.controls.mobile?.dirty ||registerForm.controls.mobile?.touched)">
+                                        Mobile Number is required.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="email" class="form-control" formControlName="email" name="email" required autofocus>
+                                    <div class="text-danger" *ngIf="registerForm.controls['email'].hasError('required')&&(registerForm.controls.email?.dirty ||registerForm.controls.email?.touched)">
+                                        E-Mail is required.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                                <div class="col-md-6">
+                                    <input type="password" id="password" class="form-control" formControlName="password" name="password" required>
+                                    <div class="text-danger" *ngIf="registerForm.controls['password'].hasError('required')&&(registerForm.controls.password?.dirty ||registerForm.controls.password?.touched)">
+                                        Password is required.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 offset-md-4">
+                                <button (click)="register()" [disabled]="!registerForm.valid" class="btn btn-primary">
+                                    Register
+                                </button>
+                                <a (click)="_sharedService.login = true" class="btn btn-link">
+                                    Login
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>

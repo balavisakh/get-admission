@@ -1,0 +1,792 @@
+<div class="main-header">
+    <div class="container">
+        <nav class="navbar  navbar-dark p-0 ">
+            <a class="navbar-brand p-0" href="#"><img src="assets/images/logo.png" alt="" class="logo"></a>
+            <div class="ml-auto">
+                    <div class="search_main">
+                            <form>
+                                <input type="text" name="search" [value]="searchKey" [(ngModel)]="searchKey" class="emailsub" placeholder="search colleges/courses across india....">
+                    <button type="click" class="btnsubs pull-right" (click)="searchCollege()">
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </button>
+                            </form>
+                        </div>
+                        <a href="#" class="d-inline-block ml-auto login_main"><img src="assets/images/login.png" alt="" /> login</a>
+                        <button class="navbar-toggler d-inline-block d-lg-none" type="button" data-toggle="collapse"
+                            data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+            </div>
+            
+
+            <div class="collapse navbar-collapse bg-2 p-3" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" [routerLink]="'about-us'">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="'colleges'">Colleges</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="'contact-us'">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="'on-construction'">Download App</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </nav>
+    </div>
+</div>
+
+
+<!-- <section class="w-100 float-left position-relative">
+    <div id="demo" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active position-relative">
+                <img src="assets/images/01-image.jpg" alt="" width="100%" height="650px" style="object-fit: cover">
+                <div class="title_slider text-white">
+                    <h2>FIND OVER 11000 COURSES IN INDIA</h2>
+                </div>
+            </div>
+            <div class="carousel-item position-relative">
+                <img src="assets/images/01-image.jpg" alt="" width="100%" height="650px" style="object-fit: cover">
+                <div class="title_slider text-white">
+                    <h2>FIND OVER 11000 COURSES IN INDIA</h2>
+                </div>
+            </div>
+            <div class="carousel-item position-relative">
+                <img src="assets/images/01-image.jpg" alt="" width="100%" height="650px" style="object-fit: cover">
+                <div class="title_slider text-white">
+                    <h2>FIND OVER 11000 COURSES IN INDIA</h2>
+                </div>
+            </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+
+    <div class="w-100 float-left menu">
+        <div class="container">
+            <nav class="navbar  navbar-dark p-0 ">
+                <a class="navbar-brand p-0" [routerLink]="'home'"><img src="assets/images/logo.jpg" alt="" class="logo"></a>
+                <div class="search_main d-none d-lg-inline-block">
+                    <form class="text-center">
+                        <input type="text" name="email" value="" class="emailsub" placeholder="Enter E-mail Address" style="    max-width: 300px;">
+                        <button type="submit" class="btnsubs"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                    </form>
+                </div>
+                <a href="#" class="d-inline-block ml-auto login_main"><i class="fa fa-user-circle-o" aria-hidden="true"></i>  login</a>
+                <button class="navbar-toggler d-inline-block d-lg-none" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse bg-2 p-3" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Collages</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Download App</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+        </div>
+    </div>
+</section> -->
+
+
+<section class="w-100 float-left position-relative">
+    <div id="demo" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+            <div class="carousel-item active position-relative">
+                <img src="assets/images/01-image.jpg" alt="" width="100%" height="650px" style="object-fit: cover">
+                <div class="title_slider text-white">
+                    <h2>CHANGE YOUR MIND <span>CHANGE</span> YOUR LIFE!</h2>
+                    <p>Jain University - Bangalore</p>
+                </div>
+            </div>
+            <div class="carousel-item position-relative">
+                <img src="assets/images/02-image.jpg" alt="" width="100%" height="650px" style="object-fit: cover">
+                <div class="title_slider text-white">
+                        <h2>NEW BEGINNING.<span> ENDLESS POSSIBILITIES</span></h2>
+                        <p>Christ college - Bangalore</p>
+                </div>
+            </div>
+            <div class="carousel-item position-relative">
+                <img src="assets/images/03-image.jpg" alt="" width="100%" height="650px" style="object-fit: cover">
+                <div class="title_slider text-white">
+                        <h2>START WITH <span>A DREAM,</span> FINISH WITH A FUTURE</h2>
+                        <p>Indian Institute of Technology - Chennai</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+</section>
+
+<!-- whygetmyadmission -->
+
+<section class="wider-data-frame wider-data-frame--home-form p-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <div class="open-time">
+                    <h3 class="opt"><span>Opening Time</span></h3>
+                    <ul>
+                        <li>
+                            <div class="time">Monday- Saturday :</div>
+                            <div class="time">09:30 - 05:30</div>
+                        </li>
+                        <!--<li>
+                                <div class="time">Saturday:</div>
+                                <div class="time">08:00 - 17:00</div>
+                            </li>-->
+                            <li>
+                                    <div class="time">Sunday:</div>
+                                    <div class="time">Close</div>
+                                </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-md-8">
+                <div class="appointment-form">
+                    <h3>Book an Appointment</h3>
+                    <form>
+                        <div class="row">
+                            <div class="col-12 col-md-4 mt-3">
+                                <input class="form-control" type="text" placeholder="Name">
+                            </div>
+                            <div class="col-12 col-md-4 mt-3">
+                                <input class="form-control" type="text" placeholder="Contact Number">
+                            </div>
+                            <div class="col-12 col-md-4 mt-3">
+                                    <input class="form-control" type="text" placeholder="Email">
+                            </div>
+                            <div class="col-12 col-md-4 mt-3">
+                                    <input class="form-control" type="text" placeholder="Date">
+                            </div>
+                            <div class="col-12 col-md-4 mt-3">
+                                    <input class="form-control" type="text" placeholder="Message">
+                            </div>
+                            <div class="col-12 col-md-4 mt-3">
+                                    <button type="button" class="btn btn-primary btn-block">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- <section class="w-100 float-left py-5">
+    <div class="container">
+        <div class="heading text-center">
+            <h3 style="text-shadow: -2px 2px 0px rgba(0, 0, 0, 0.32);">WHY <span style="color: #1f326a">GET MY</span> <span style="color: #ff3c00">ADMISSION?</span></h3>
+            <p class="txt2"> Our aim is to act as a bridge to students to find the right course in the right campus without any hassles and also to fulfill parents aspirations.</p>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                <div class="inner_why">
+                    <div class="main_header_why text-uppercase">
+                        <h4>Search Collages</h4>
+                    </div>
+                    <div class="why_icon">
+                        <img src="assets/images/icon/01.jpg" width="100%" alt="">
+                    </div>
+                    <p>The course and college you are searching for is at the tip of your finger right now. Click and search over the huge list which will amaze you.</p>
+                    <div class="bar_why">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                <div class="inner_why">
+                    <div class="main_header_why text-uppercase">
+                        <h4>Exams</h4>
+                    </div>
+                    <div class="why_icon">
+                        <img src="assets/images/icon/02.jpg" width="100%" alt="">
+                    </div>
+                    <p>With respect to exams you will find a wide range of subjects which you will have to appear in entrance, semester, practical, theory and viva voice.</p>
+                    <div class="bar_why" style="background-color: #669acb">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                <div class="inner_why">
+                    <div class="main_header_why text-uppercase">
+                        <h4>Web Brochure</h4>
+                    </div>
+                    <div class="why_icon">
+                        <img src="assets/images/icon/03.jpg" width="100%" alt="">
+                    </div>
+                    <p>As a next step you will come across the brochures of each institution which will enlighten on what you want to know. Know what others have to say about the colleges you are searching.</p>
+                    <div class="bar_why" style="background-color: #1f326a">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                <div class="inner_why">
+                    <div class="main_header_why text-uppercase">
+                        <h4>Get your Admission</h4>
+                    </div>
+                    <div class="why_icon">
+                        <img src="assets/images/icon/04.jpg" width="100%" alt="">
+                    </div>
+                    <p>Find information about the final steps to colleges and courses. We will stand with you and assist step by step throughout the admission procedure. </p>
+                    <div class="bar_why" style="background-color: #ff3c00">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<section class="w-100 float-left py-5">
+    <div class="container">
+        <div class="heading text-center">
+            <h3 style="text-shadow: -2px 2px 0px rgba(0, 0, 0, 0.32);">WHY <span style="color: #1f326a">GET
+                    MY</span> <span style="color: #ff3c00">ADMISSION?</span></h3>
+            <p class="txt2 mb-5"> Our aim is to act as a bridge to students to find the right course in the right
+                campus
+                without any hassles and also to fulfill parents aspirations.</p>
+        </div>
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="inner_why">
+                            <div class="main_header_why text-uppercase">
+                                <h4>Search Colleges</h4>
+                            </div>
+                            <div class="why_icon">
+                                <img src="assets/images/icon/01.jpg" width="100%" alt="">
+                            </div>
+                            <p>The course and college you are searching for is at the tip of your finger right now.
+                                Click
+                                and search over the huge list which will amaze you.</p>
+                            <div class="bar_why">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="inner_why">
+                            <div class="main_header_why text-uppercase">
+                                <h4>Exams</h4>
+                            </div>
+                            <div class="why_icon">
+                                <img src="assets/images/icon/02.jpg" width="100%" alt="">
+                            </div>
+                            <p>With respect to exams you will find a wide range of subjects which you will have to
+                                appear in
+                                entrance, semester, practical, theory and viva voice.</p>
+                            <div class="bar_why" style="background-color: #669acb">
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="inner_why">
+                            <div class="main_header_why text-uppercase">
+                                <h4>Get your Admission</h4>
+                            </div>
+                            <div class="why_icon">
+                                <img src="assets/images/icon/04.jpg" width="100%" alt="">
+                            </div>
+                            <p>Find information about the final steps to colleges and courses. We will stand with
+                                you and
+                                assist step by step throughout the admission procedure. </p>
+                            <div class="bar_why" style="background-color: #ff3c00">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="inner_why">
+                            <div class="main_header_why text-uppercase">
+                                <h4>college compare</h4>
+                            </div>
+                            <div class="why_icon">
+                                <img src="assets/images/icon/collage-compare.png" width="100%" alt="">
+                            </div>
+                            <p>1500 Colleges Ranked based on transparent, accurate, government-approved,
+                                student-friendly data
+                                Know your College Admission chances at the course-level based on domicile, caste,
+                                gender etc</p>
+                            <div class="bar_why" style="background-color: #1f326a">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="inner_why">
+                            <div class="main_header_why text-uppercase">
+                                <h4>rank predictor</h4>
+                            </div>
+                            <div class="why_icon">
+                                <img src="assets/images/icon/rank-predictor.png" width="100%" alt="">
+                            </div>
+                            <p>Predict your Rank before the actual results based on your performance in the exam and
+                                get in-depth insights</p>
+                            <div class="bar_why" style="background-color: #54983d">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="inner_why">
+                            <div class="main_header_why text-uppercase">
+                                <h4>Education Loan</h4>
+                            </div>
+                            <div class="why_icon">
+                                <img src="assets/images/icon/loan-details.png" width="100%" alt="">
+                            </div>
+                            <p>Education Loan is the one service which has helped for years to aid aspiring students
+                                in achieving their academic pursuits.</p>
+                            <div class="bar_why" style="background-color: #a2629a">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<section class="w-100 float-left bg-2 py-5">
+
+    <div class="container">
+        <div class="heading text-center">
+            <h3 class="text-white text-uppercase">Collage by category</h3>
+            <p class="txt1"> To make it more easy, we have displayed college details category wise. <br> getmyadmission.com is an extensive search engine for the students, parents, and education industry players who are seeking information
+            </p>
+        </div>
+        <div *ngIf="courseCategories.length>1">
+            <div class="row" *ngFor="let item of [].constructor(3); let i = index">
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <a (click)="showColleges(i*4+1)">
+                        <div class="category cursor-point">
+                            <div class="top_sec d-flex">
+                                <div class="numbers">
+                                    <h4>{{getCategoryValue(i*4+1,'collegeCount')}}</h4>
+                                    <p class="mb-0">Collages</p>
+                                </div>
+                                <div class="cat_icon ml-auto">
+                                    <img src="assets/images/icons/01.png" alt="">
+                                </div>
+                            </div>
+                            <div class="bottm_sec">
+                                <h4>{{getCategoryValue(i*4+1,'categoryName')}}</h4>
+                            </div>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <a (click)="showColleges(i*4+2)">
+                        <div class="category cursor-point">
+                            <div class="top_sec d-flex">
+                                <div class="numbers">
+                                    <h4>{{getCategoryValue(i*4+2,'collegeCount')}}</h4>
+                                    <p class="mb-0">Collages</p>
+                                </div>
+                                <div class="cat_icon ml-auto">
+                                    <img src="assets/images/icons/02.png" alt="">
+                                </div>
+                            </div>
+                            <div class="bottm_sec">
+                                <h4>{{getCategoryValue(i*4+4,'collegeCount')}}</h4>
+                            </div>
+
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <a (click)="showColleges(i*4+3)">
+                        <div class="category cursor-point">
+                            <div class="top_sec d-flex">
+                                <div class="numbers">
+                                    <h4>{{getCategoryValue(i*4+3,'collegeCount')}}</h4>
+                                    <p class="mb-0">Collages</p>
+                                </div>
+                                <div class="cat_icon ml-auto">
+                                    <img src="assets/images/icons/03.png" alt="">
+                                </div>
+                            </div>
+                            <div class="bottm_sec">
+                                <h4>{{getCategoryValue(i*4+3,'categoryName')}}</h4>
+                            </div>
+
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <a (click)="showColleges(i*4+4)">
+                        <div class="category cursor-point">
+                            <div class="top_sec d-flex">
+                                <div class="numbers">
+                                    <h4>{{getCategoryValue(i*4+4,'collegeCount')}}</h4>
+                                    <p class="mb-0">Collages</p>
+                                </div>
+                                <div class="cat_icon ml-auto">
+                                    <img src="assets/images/icons/04.png" alt="">
+                                </div>
+                            </div>
+                            <div class="bottm_sec">
+                                <h4>{{getCategoryValue(i*4+4,'categoryName')}}</h4>
+                            </div>
+
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="w-100 float-left py-5">
+    <div class="container">
+        <div class="heading text-center">
+            <h3 style="text-shadow: -2px 2px 0px rgba(0, 0, 0, 0.32);">TOP <span style="color: #1f326a">FUTURED COLLAGES</span> <span style="color: #ff3c00">OF INDIA</span></h3>
+            <p class="txt2"> getmyadmission.com is an extensive search engine for the students, parents, and education industry players who are seeking information.</p>
+        </div>
+        <div class="main_collage position-relative  w-100 float-left w-100 float-left">
+            <ul class="main d-block d-md-flex justify-content-center">
+                <li class="main-inner-list active_color" (click)="selectedCollegeType = 'ENGINEERING'" data-tab="tab1">TOP ENGINEERING COLLAGES</li>
+                <li class="main-inner-list" (click)="selectedCollegeType = 'ARTS'" data-tab="tab2">TOP ARTS COLLAGES</li>
+                <li class="main-inner-list" (click)="selectedCollegeType = 'LOCATION'" data-tab="tab3">TOP COLLAGE IN ERNAMKULAM</li>
+            </ul>
+            <div class="w-100 float-left">
+                <div class="w-100 float-left main_once  active_two  clearfix " id="tab1">
+                    <div class="row mb-4">
+                        <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let item of topEngineeringColleges; let i = index" [hidden]="i>8">
+                            <div class="inner_main_uni cursor-point">
+                                <img [src]="_constanceService.LOGO_BASE_URL+item.logo" alt="" class="float-left mr-3">
+                                <p title="{{item.collegeName}}" class="mb-0 two-line-text"> {{item.collegeName}}</p>
+                                <small class="mb-0 color1">Established in : {{item.establishedYear}} </small><br>
+                                <small class="mb-0 color2" style=" font-size: 12px; ">Ownership : {{item.ownerShip}} </small><br>
+                                <a (click)="showCollegeDetails(item.collegeId)" class="buttonsmain mt-1 d-inline-block"><small>View Details</small></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-100 float-left main_once  clearfix " id="tab2">
+                    <div class="row mb-4">
+                        <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let item of topArtsColleges; let i = index" [hidden]="i>8">
+                            <div class="inner_main_uni cursor-point">
+                                <img src="assets/images/uni.jpg" alt="" class="float-left mr-3">
+                                <p class="mb-0"> {{item.collegeName}}</p>
+                                <small class="mb-0 color1">Established in : {{item.establishedYear}} </small><br>
+                                <small class="mb-0 color2" style=" font-size: 12px; ">Ownership : {{item.ownerShip}} </small><br>
+                                <a (click)="showCollegeDetails(item.collegeId)" class="buttonsmain mt-1 d-inline-block"><small>View Details</small></a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-100 float-left main_once clearfix " id="tab3">
+                    <div class="row mb-4">
+                        <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let item of topCollegesList; let i = index" [hidden]="i>8">
+                            <div class="inner_main_uni cursor-point">
+                                <img src="assets/images/uni.jpg" alt="" class="float-left mr-3">
+                                <p class="mb-0"> {{item.collegeName}}</p>
+                                <small class="mb-0 color1">Established in : {{item.establishedYear}} </small><br>
+                                <small class="mb-0 color2" style=" font-size: 12px; ">Ownership : {{item.ownerShip}} </small><br>
+                                <a class="buttonsmain mt-1 d-inline-block" (click)="showCollegeDetails(item.collegeId)"><small>View Details</small></a>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="w-100 text-center">
+                    <a (click)="showColleges(null)" class="tab-btns">View All</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="w-100 float-left bgnext py-5">
+    <div class="container">
+        <div class="heading text-center">
+            <h3 style="text-shadow: -2px 2px 0px rgba(0, 0, 0, 0.32); color: white">TOP <span style="color: #82bcff">COURSES</span></h3>
+            <p class="text-white" style="opacity: .8; font-weight: 600">getmyadmission.com recommends the best courses that suit your intetests.
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-6 col-md-3 col-l-5 mb-4" *ngFor="let item of topCources; let i = index">
+                <div class="main_couse">
+                    {{item.abbreviation}}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TOP EXAMS -->
+<section class="w-100 float-left py-5">
+    <div class="container">
+        <div class="heading text-center">
+            <h3 style="text-shadow: -2px 2px 0px rgba(0, 0, 0, 0.32);color: #1f326a">TOP <span style="color: #ff3c00">EXAMS</span></h3>
+            <p class="txt2">getmyadmission.com provides details about the major entrance examinations and helps you prepare for them.
+            </p>
+            <div class="row">
+                <div class="col-12 col-lg-4 mt-5">
+                    <div class="inner_exam">
+                        <div class="exam_icon">
+                            <img src="assets/images/pencil.jpg" alt="" width="80px">
+                        </div>
+                        <div class="exam-heading">
+                            <h4>AP EAMCET 2019</h4>
+                        </div>
+                        <p>Andhra Pradesh Engineering Agiricultural and Medical Common Entrance Test(AP EAMCET) is a State level examination for...</p>
+                    </div>
+
+                </div>
+                <div class="col-12 col-lg-4 mt-5">
+                    <div class="inner_exam">
+                        <div class="exam_icon">
+                            <img src="assets/images/pencil.jpg" alt="" width="80px">
+                        </div>
+                        <div class="exam-heading">
+                            <h4>NEET 2019</h4>
+                        </div>
+                        <p>National Eligibility Entrance Test (NEET) is an all india level entrance examination for admission into MBBS and BDS Courses after class12</p>
+                    </div>
+
+                </div>
+                <div class="col-12 col-lg-4 mt-5">
+                    <div class="inner_exam">
+                        <div class="exam_icon">
+                            <img src="assets/images/pencil.jpg" alt="" width="80px">
+                        </div>
+                        <div class="exam-heading">
+                            <h4>COMEDK 2019</h4>
+                        </div>
+                        <p>COMEDK UGET is a state level exam conducted for Engineering and medical admission in collages afflilated to COMEDK. The online exam is ..</p>
+                    </div>
+
+                </div>
+                <div class="w-100 text-center p-5">
+						<a routerLink = "/top-exams" class="tab-btns">View All</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- NEWS AND EVENTS -->
+
+<section class="wider-data-frame">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h3 style="text-shadow: -2px 2px 0px rgba(0, 0, 0, 0.32);color: #1f326a">NEWS AND <span
+                        style="color: #ff3c00">EVENTS</span></h3>
+                <p class="txt2">Stay informed about the latest happenings to map your higher studies.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <div class="news-card">
+                    <div class="news-card--img">
+                        <img src="assets/images/news-img1.jpg" alt="" />
+                        <div class="category-label">Application Form</div>
+                    </div>
+                    <div class="news-card--content">
+                        <a href="/assets/static/up_tet2019.html">
+                            <h3>UPTET 2019 Exam Notifcation</h3>
+                        </a>
+                        <div class="author">Updated On <span> - October 18th 2019</span></div>
+                        <p>UPTET 2019 will be conducted on December 22, 2019. UPBEB has released the notification announcing registration and exam dates....</p>
+                        <a href="/assets/static/up_tet2019.html" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="news-card">
+                    <div class="news-card--img">
+                        <img src="assets/images/news-img2.jpg" alt="" />
+                        <div class="category-label">Application Form</div>
+                    </div>
+                    <div class="news-card--content">
+                        <a href="/assets/static/lsat2019.html">
+                            <h3>LSAT 2019 Exam Admit Card Released</h3>
+                        </a>
+                        <div class="author">Updated On <span>- June 10th 2019</span></div>
+                        <p>Andhra Pradesh Engineering Agiricultural and Medical Common Entrance Test(AP EAMCET) is a
+                            State level examination for...</p>
+                        <a href="/assets/static/lsat2019.html" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="news-thumb-outer">
+                    <div class="news-thumb">
+                        <div class="news-thumb--img">
+                            <img src="assets/images/news-thumb-1.jpg" alt="" />
+                        </div>
+                        <div class="news-thumb--content">
+                            <a routerLink = "/comedk">
+                                <h4>COMEDK UGET 2020</h4>
+                            </a>
+                            <h5>Updated On - October 1st 2019</h5>
+                        </div>
+                    </div>
+                    <div class="news-thumb">
+                        <div class="news-thumb--img">
+                            <img src="assets/images/ie.jpg" alt="" />
+                        </div>
+                        <div class="news-thumb--content">
+                            <a href="/assets/static/ie2019.html">
+                                <h4>Attend IE Virtual Fair </h4>
+                            </a>
+                            <h5>Published on Thursday, October 10, 2019</h5>
+                        </div>
+                    </div>
+                    <div class="news-thumb">
+                        <div class="news-thumb--img">
+                            <img src="assets/images/news-thumb-1.jpg" alt="" />
+                        </div>
+                        <div class="news-thumb--content">
+                            <a href="/assets/static/comedk.html">
+                                <h4>COMEDK 2020</h4>
+                            </a>
+                            <h5>Updated On - October 1st 2019 </h5>
+                        </div>
+                    </div>
+                    <div class="news-thumb">
+                        <div class="news-thumb--img">
+                            <img src="assets/images/news-thumb-2.jpg" alt="" />
+                        </div>
+                        <div class="news-thumb--content">
+                            <a href="#">
+                                <h4>MAT September 2019 Exam Details Released</h4>
+                            </a>
+                            <h5>August 23, 2019</h5>
+                        </div>
+                    </div>
+                    <div class="news-thumb">
+                        <div class="news-thumb--img">
+                            <img src="assets/images/news-thumb-1.jpg" alt="" />
+                        </div>
+                        <div class="news-thumb--content">
+                            <a href="#">
+                                <h4>MAT September 2019 Exam Details Released</h4>
+                            </a>
+                            <h5>August 23, 2019</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ADD WEBSITE -->
+
+<section class="wider-data-frame wider-data-frame--admission-banner" style="padding: 0px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <a href="http://www.mithrascribing.com/" target="_blank">
+                    <img src="assets/images/admission-banner.jpg" alt="" />
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- NEWSLETTER -->
+
+
+<section class="w-100 float-left py-5 bg-2">
+    <div class="container">
+        <div class="text-white text-center">
+            <h3 style="font-weight: 300;">SUBSCRIBE TO OUR NEWS LETTER </h3>
+        </div>
+        <div  class="f_newsletter d-flex justify-content-cente">
+        <form class="text-center spl_width00">
+            <input type="text" name="email" value="" class="newsltr_sub spl_width01 " placeholder="Enter E-mail Address">
+            <button type="submit" class="btnsubs pull-right">
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            </button>
+        </form>
+            <div class="clearfix"></div>
+            
+            </div>
+        <div style="text-align: center; color: #818181; font-size: 13px; margin-top: 10px;">Please <a href="#">click here </a>and  enter your mobile no to get latest educational updates on your mobile</div>
+        
+    </div>
+</section>
+<!-- <section class="w-100 float-left py-5 bg-2">
+    <div class="container">
+        <div class="text-white text-center">
+            <h3 style="font-weight: 300;">SUBSCRIBE TO OUR NEWS LETTER </h3>
+        </div>
+        <form class="text-center">
+            <input type="text" name="email" value="" class="emailsub" placeholder="Enter E-mail Address">
+            <button type="submit" class="btnsubs">
+    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+</button>
+        </form>
+    </div>
+</section> -->

@@ -1,0 +1,25 @@
+<div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Courses</h4>
+        </div>
+        <div class="modal-body">
+            <table style="width:100%">
+                <tr>
+                    <th>Course Name</th>
+                    <th>Abbreviation</th>
+                </tr>
+                <tr *ngFor="let item of courceList; let i = index" class="row-spliter">
+                    <td>{{item.courseName}}</td>
+                    <td>{{item.abbreviation}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" (click)="dialogRef.close();">Close</button>
+        </div>
+    </div>
+
+</div>

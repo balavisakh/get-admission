@@ -1,0 +1,73 @@
+.menu {
+    margin-top: 46px;
+}
+
+header {
+    position: fixed;
+    z-index: 9;
+}
+
+.menu {
+    position: fixed;
+}
+
+.inner-banner {
+    width: 100%;
+    min-height: 300px;
+    /* background-image: url("assets/images/bgnext.jpg"); */
+    background-position: center;
+}
+
+.banner-content {
+    width: 100%;
+    min-height: 300px;
+    background-color: rgba(31, 50, 106, 0.6);
+    padding-top: 100px;
+}
+
+.banner-content h3 {
+    color: #fff;
+    font-size: 50px;
+    font-weight: lighter;
+}
+
+.contact-container {
+    min-height: 350px;
+    background: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    width: 60% !important;
+    margin: -50px auto 80px;
+}
+
+.contact-content {
+    padding: 30px;
+    float: left;
+}
+
+.contact-content p {
+    color: #8a8a8a;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.contact-content p span {
+    color: #464646;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.contact-content .fa {
+    font-size: 60px;
+    color: #ff3c00;
+    margin-bottom: 10px;
+}
+
+.blue-icon {
+    color: #1f326a !important;
+    font-size: 50px !important;
+}
+
+.social-media-icons .fa {
+    margin-right: 20px;
+    font-size: 24px;
+}

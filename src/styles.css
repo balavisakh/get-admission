@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+
+.cursor-point {
+    cursor: pointer;
+}
+
+.two-line-text {
+    height: 31px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 16px;
+    /* fallback */
+    max-height: 32px;
+    /* fallback */
+    -webkit-line-clamp: 2;
+    /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+.college-list-banner {
+    height: 100px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.not-allowed {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.search-filter-list {
+    max-height: 150px;
+    overflow-y: auto;
+    overflow-x: auto;
+}

@@ -1,0 +1,22 @@
+.menu {
+    margin-top: 46px;
+}
+
+header {
+    position: fixed;
+    z-index: 9;
+}
+
+.menu {
+    position: fixed;
+}
+
+.mbred {
+    border-bottom: 2px solid red !important;
+}
+
+@media(max-width: 767px) {
+    .rating ul {
+        position: static !important;
+    }
+}

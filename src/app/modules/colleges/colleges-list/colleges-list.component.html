@@ -1,0 +1,410 @@
+<!-- <div class="w-100 float-left menu">
+    <div class="container">
+        <nav class="navbar  navbar-dark p-0 ">
+            <a class="navbar-brand p-0" [routerLink]="'/home'"><img src="assets/images/logo.jpg" alt="" class="logo"></a>
+            <div class="search_main d-none d-lg-inline-block">
+                <form class="text-center">
+                    <input type="text" name="email" value="" class="emailsub" placeholder="Enter E-mail Address" style="    max-width: 300px;">
+                    <button type="submit" class="btnsubs">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </button>
+                </form>
+            </div>
+            <a href="#" class="d-none d-xl-inline-block ml-auto 
+            text-white"><i class="fa fa-user-circle-o" aria-hidden="true"></i>  Welcome user@getmyadmission.com</a>
+            <button class="navbar-toggler d-inline-block d-lg-none" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse bg-2 p-3" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" [routerLink]="'about-us'">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="'colleges'">Colleges</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="'contact-us'">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="'on-construction'">Download App</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </nav>
+    </div>
+</div> -->
+
+
+
+<div class="w-100 float-left new_menu">
+    <div class="container inner_cont_padding">
+        <nav class="navbar  navbar-dark p-0 ">
+            <a class="navbar-brand p-0" [routerLink]="'/home'"><img src="assets/images/logo.png" alt="" class="logo"></a>
+            <div class="search_main d-none d-lg-inline-block" style="width:362px">
+                <form class="text-center">
+                    <input type="text" name="search" [value]="searchKey" [(ngModel)]="searchKey" class="emailsub" placeholder="search colleges/courses"
+                        style="max-width: 300px;">
+                    <button type="click" class="btnsubs" (click)="searchCollege()">
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </div>
+            <a href="#" class="d-none d-xl-inline-block ml-auto 
+text-white"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Welcome user@getmyadmission.com</a>
+            <button class="navbar-toggler d-inline-block d-lg-none" type="button" data-toggle="collapse"
+                data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse bg-2 p-3" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" [routerLink]="'about-us'">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="'colleges'">Colleges</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="'contact-us'">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="'on-construction'">Download App</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </nav>
+    </div>
+</div>
+
+
+
+
+<section class="w-100 float-left mt-5 pt-5">
+    <div class="container pt-5">
+        <div class="search_main w-100 d-inline-block d-lg-none">
+            <form class="text-center">
+                <input type="text" name="email" value="" class="emailsub" placeholder="Enter E-mail Address" style="    max-width: 260px;">
+                <button type="submit" class="btnsubs">
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </button>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-3">
+                <div class="filter bg-3 w-100 float-left p-3">
+                    <h5 class="float-left" style="color: #7398bb">FILTERS</h5>
+                    <small class="float-right">Found {{totalRecords}} Collages <i style="color: #fe670c" class="fa fa-retweet" aria-hidden="true"></i></small>
+                    <hr class="w-100 float-left">
+                    <div class="filter_child p-3 position-relative">
+                        <h6 class="m-0 cursor-point">STATE</h6>
+                        <div class="iconcloseopen rotates cursor-point">
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                        <div class="inner_filter d-block">
+                            <form>
+                                <input class="searchs" (keyup)="searchFilter('state',stateSearch.value,$event)" type="text" #stateSearch name="search" value="" placeholder="Search">
+                                <button class="icon_search" (click)="searchFilter('state',stateSearch.value,null)"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            </form>
+
+                            <form action="" class="pt-2">
+                                <span *ngFor="let item of stateList; let i = index" [hidden]="item.hidden">
+                                        <input type="checkbox" name="vehicle1" [value]="item.id" [(ngModel)]="item.checked" > {{item.stateName}}<br>
+                                </span>
+
+                            </form>
+
+                        </div>
+                    </div>
+                    <div class="filter_child p-3 position-relative">
+                        <h6 class="m-0 cursor-point">CITY</h6>
+                        <div class="iconcloseopen rotates cursor-point" data-toggle="collapse" data-target="#demo">
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                        <div id="demo" class="inner_filter d-block">
+                            <form>
+                                <input class="searchs" type="text" (keyup)="searchFilter('state',citySearch.value,$event)" #citySearch name="search" value="" placeholder="Search">
+                                <button class="icon_search" (click)="searchFilter('city',citySearch.value,null)"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            </form>
+
+                            <form action="" class="pt-2 search-filter-list">
+                                <span *ngFor="let item of citiesList; let i = index" [hidden]="item.hidden">
+                                            <input type="checkbox" name="vehicle1" [value]="item.id" [(ngModel)]="item.checked"> {{item.cityName}}<br>
+                                    </span>
+                            </form>
+
+                        </div>
+                    </div>
+
+
+                    <div class="filter_child p-3 position-relative">
+                        <h6 class="m-0 cursor-point">COURSES</h6>
+                        <div class="iconcloseopen rotates cursor-point">
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                        <div class="inner_filter">
+                            <form>
+                                <input class="searchs" type="text" (keyup)="searchFilter('state',courseSearch.value,$event)" #courseSearch name="search" value="" placeholder="Search">
+                                <button (click)="searchFilter('course',courseSearch.value,null)" class="icon_search"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            </form>
+
+                            <form action="" class="pt-2 search-filter-list">
+                                <span *ngFor="let item of coursesList; let i = index" [hidden]="item.hidden">
+                                            <input type="checkbox" name="vehicle1" [value]="item.courseName" [(ngModel)]="item.checked"> {{item.abbreviation}}<br>
+                                    </span>
+
+                            </form>
+
+                        </div>
+                    </div>
+                    <div class="filter_child p-3 position-relative">
+                        <h6 class="m-0 cursor-point">SPECIALISATION</h6>
+                        <div class="iconcloseopen cursor-point">
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                        <div class="inner_filter">
+                            <form>
+                                <input class="searchs" (keyup)="searchFilter('specialisation',specialisationSearch.value,$event)" #specialisationSearch type="text" name="search" value="" placeholder="Search">
+                                <button class="icon_search" (click)="searchFilter('specialisation',specialisationSearch.value,null)"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            </form>
+
+                            <form action="" class="pt-2">
+                                <span *ngFor="let item of specialisationList; let i = index">
+                                    <input type="checkbox" name="vehicle1" [value]="item.courseName" [(ngModel)]="item.checked"> {{item.specialisationName}}<br>
+                            </span>
+
+                            </form>
+                        </div>
+                    </div>
+                    <div class="filter_child p-3 position-relative">
+                        <h6 class="m-0 cursor-point">RATING</h6>
+                        <div class="iconcloseopen cursor-point">
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                        <div class="inner_filter">
+                            <form>
+                                <input class="searchs" type="text" name="search" value="" placeholder="Search">
+                                <button class="icon_search"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            </form>
+
+                            <form action="" class="pt-2">
+                                <span *ngFor="let item of ratingFilter; let i = index">
+                                            <input type="checkbox" name="vehicle1" [value]="item.id" [(ngModel)]="item.checked"> {{item.rate}}<br>
+                                    </span>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="filter_child p-3 position-relative">
+                        <h6 class="m-0 cursor-point">TYPE</h6>
+                        <div class="iconcloseopen cursor-point">
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                        <div class="inner_filter">
+                            <form>
+                                <input class="searchs" type="text" name="search" value="" placeholder="Search">
+                                <button class="icon_search"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            </form>
+
+                            <form action="" class="pt-2">
+                                <span *ngFor="let item of typeList; let i = index">
+                                            <input type="checkbox" name="vehicle1" [value]="item.id" [(ngModel)]="item.checked"> {{item.type}}<br>
+                                    </span>
+                            </form>
+                        </div>
+                    </div>
+
+
+                    <div class="filter_child p-3 position-relative">
+                        <h6 class="m-0 cursor-point">BUDGET</h6>
+                        <div class="iconcloseopen cursor-point">
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                        <div class="inner_filter">
+                            <form>
+                                <input class="searchs" type="text" name="search" value="" placeholder="Search">
+                                <button class="icon_search"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            </form>
+
+                            <form action="" class="pt-2">
+                                <span *ngFor="let item of budgetList; let i = index">
+                                            <input type="checkbox" name="vehicle1" [value]="item.id" [(ngModel)]="item.checked"> {{item.budget}}<br>
+                                    </span>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" (click)="applayFilter()" class="clg-btn mt-2" name="" value="Apply filer" placeholder="">
+            </div>
+            <div class="col-12 col-lg-9">
+                <h5>LIST OF TOP {{_sharedService.collegeType}} COLLEGES IN INDIA BASED ON 2019 RANKING</h5>
+                <div class="w-100 float-left p-2 bg-3">
+                    <p class="mb-0 float-left ml-2 ml-md-0">You are in:Home/ {{_sharedService.collegeType}} Collage</p>
+                    <div class="d-block d-md-flex float-left mt-3 mt-xl-0 float-xl-right">
+                        <div class="sorts mx-2">
+                            <div class="float-left mb-0">
+                                <p class="mb-0 float-left">Sort by: </p>
+                                <form class="select_box cursor-point">
+                                    <select [(ngModel)]="sortBy" name="" (change)="getAllColleges()" [ngModelOptions]="{standalone: true}">
+                                        <option  [value]="item.name" class="cursor-point" *ngFor="let item of _constanceService.COLLEGE_SORT_BY_LIST; let i = index">{{item.displayName}}</option>                            
+                                    </select>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="sorts mx-2">
+                            <div class="float-left mb-0">
+                                <p class="mb-0 float-left">Items per page: </p>
+                                <form class="select_box">
+                                    <select [(ngModel)]="pageSize" (change)="getAllColleges()" [ngModelOptions]="{standalone: true}">
+                                        <option [value]="item" *ngFor="let item of _constanceService.ITEMS_PER_PAGES; let i = index">{{item}}</option>
+                                    </select>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="deatil_sort float-left mx-2">
+                            <p class="mb-0 float-left mr-2">{{offset}}-{{+offset++numberOfElements}} of {{totalRecords}} </p>
+                            <div class="left float-left mr-2 not-allowed" *ngIf="+currentPage<2">
+                                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                            </div>
+                            <div class="left float-left mr-2 cursor-point" (click)="currentPage=+currentPage-1;getAllColleges()" *ngIf="+currentPage>1">
+                                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                            </div>
+
+                            <div class="right float-left not-allowed" *ngIf="+totalPages<=+currentPage">
+                                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            </div>
+                            <div class="right float-left cursor-point" (click)="currentPage=+currentPage+1;getAllColleges()" *ngIf="+totalPages>+currentPage">
+                                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="w-100 float-left mb-5">
+                    <div class="row">
+
+                        <div class="col-12 col-md-6 col-lg-6 col-xl-4" (click)="showCollegeDetails(item.collegeId)" *ngFor="let item of collegeList; let i = index">
+                            <div class="inner_collages position-relative cursor-point">
+                                <!-- <img src="assets/images/collage/02.jpg" alt="" class="w-100"> -->
+                                <img [src]="_constanceService.BANNER_BASE_URL+item.banner" alt="" class="w-100 college-list-banner">
+                                <h6 title="{{item.collegeName}}" class="mt-2 two-line-text">{{item.collegeName}}</h6>
+                                <p><i class="fa fa-map-marker" aria-hidden="true"></i>{{item.city}} ,{{item.state}}</p>
+                                <div>
+                                    <a (click)="$event.stopPropagation();_sharedService.openCoursePopup(item.collegeId)" class="clg-btn">Courses</a>
+                                    <a (click)="$event.stopPropagation();viewBrocher(item.brochure)" [ngClass]="{'not-allowed': !item.brochure}" class="clg-btn">Brochure</a>
+                                </div>
+                                <div class="rating">
+                                    <ul>
+                                        <li *ngIf="item.rating>0"><i class="fa fa-star" aria-hidden="true"></i></li>
+                                        <li *ngIf="item.rating>1"><i class="fa fa-star" aria-hidden="true"></i></li>
+                                        <li *ngIf="item.rating>2"><i class="fa fa-star" aria-hidden="true"></i></li>
+                                        <li *ngIf="item.rating>3"><i class="fa fa-star" aria-hidden="true"></i></li>
+                                        <li *ngIf="item.rating>4"><i class="fa fa-star" aria-hidden="true"></i></li>
+                                    </ul>
+                                </div>
+                                <div class="collagelogo">
+                                    <img [src]="_constanceService.LOGO_BASE_URL+item.logo" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="w-100 float-left bg-2 py-5" style="border-bottom: 4px solid red">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 col-l-5 mb-3 mb-md-0">
+                <ul class="footerlistmain m-0 p-0">
+                    <li>
+                        <h5>TOP COLLAGES</h5>
+                    </li>
+                    <li><a href="#">M.B.A</a></li>
+                    <li><a href="#">B.TECH/B.E</a></li>
+                    <li><a href="#">MCA</a></li>
+                    <li><a href="#">BCA</a></li>
+                    <li><a href="#">B.TECH</a></li>
+                    <li><a href="#">MA</a></li>
+                    <li><a href="#">BA</a></li>
+
+                </ul>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-l-5 mb-3 mb-md-0">
+                <ul class="footerlistmain m-0 p-0">
+                    <li>
+                        <h5>TOP UNIVERSITIES</h5>
+                    </li>
+                    <li><a href="#">ENGINEERING</a></li>
+                    <li><a href="#">MANAGEMENT</a></li>
+                    <li><a href="#">MEDICAL</a></li>
+                    <li><a href="#">LAW</a></li>
+                    <li><a href="#">COMMERCE</a></li>
+                    <li><a href="#">SCIENCE</a></li>
+                    <li><a href="#">ARTS</a></li>
+
+                </ul>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-l-5 mb-3 mb-md-0">
+                <ul class="footerlistmain m-0 p-0">
+                    <li>
+                        <h5>TOP EXAM</h5>
+                    </li>
+                    <li><a href="#">CAT</a></li>
+                    <li><a href="#">GATE</a></li>
+                    <li><a href="#">IIT-JEE</a></li>
+                    <li><a href="#">AIPMT</a></li>
+                    <li><a href="#">XAT</a></li>
+                    <li><a href="#">CLAT</a></li>
+                    <li><a href="#">MAT</a></li>
+
+
+
+                </ul>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-l-5 mb-3 mb-md-0">
+                <ul class="footerlistmain m-0 p-0">
+                    <li>
+                        <h5>STUDY ABROAD</h5>
+                    </li>
+                    <li><a href="#">CANADA</a></li>
+                    <li><a href="#">USA</a></li>
+                    <li><a href="#">UK</a></li>
+                    <li><a href="#">AUSTRALIA</a></li>
+                    <li><a href="#">GERMANY</a></li>
+                    <li><a href="#">SWEDEN</a></li>
+
+
+
+
+                </ul>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-l-5 mb-3 mb-md-0">
+                <ul class="footerlistmain m-0 p-0">
+                    <li>
+                        <h5>OTHER LINKS</h5>
+                    </li>
+                    <li><a href="#">ABOUT COLLAGEDUNIA</a></li>
+                    <li><a href="#">CONTACT US</a></li>
+                    <li><a href="#">ADVERTISING</a></li>
+                    <li><a href="#">CAREERS</a></li>
+                    <li><a href="#">PRIVACY</a></li>
+                    <li><a href="#">TERMS & CONDITION</a></li>
+
+
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- </section> -->

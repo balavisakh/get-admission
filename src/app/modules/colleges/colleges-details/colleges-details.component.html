@@ -1,0 +1,693 @@
+<div class="w-100 float-left menu">
+    <div class="container">
+        <nav class="navbar  navbar-dark p-0 ">
+            <a class="navbar-brand p-0" [routerLink]="'home'">
+                <img src="assets/images/logo.jpg" alt="" class="logo">
+            </a>
+            <div class="search_main d-none d-lg-inline-block">
+                <form class="text-center">
+                    <input type="text" name="email" value="" class="emailsub" placeholder="Enter E-mail Address" style="    max-width: 300px;">
+                    <button type="submit" class="btnsubs"> <i class="fa fa-chevron-right" aria-hidden="true"></i>
+						</button>
+                </form>
+            </div>
+            <a href="#" class="d-none d-xl-inline-block ml-auto text-white"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Welcome user@getmyadmission.com</a>
+            <button class="navbar-toggler d-inline-block d-lg-none" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
+				</button>
+            <div class="collapse navbar-collapse bg-2 p-3" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active"> <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">Collages</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">Download App</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+<section class="w-100 float-left mt-5 pt-5">
+    <div class="container pt-5">
+        <div class="search_main w-100 d-inline-block d-lg-none">
+            <form class="text-center">
+                <input type="text" name="email" value="" class="emailsub" placeholder="Enter E-mail Address" style="    max-width: 260px;">
+                <button type="submit" class="btnsubs"> <i class="fa fa-chevron-right" aria-hidden="true"></i>
+					</button>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-3">
+                <div class="filter bg-3 w-100 float-left p-3 mb-2">
+                    <h5 class="float-left" style="color: #7398bb">SIMILAR COLLAGES</h5>
+                    <small class="float-right"><i style="color: #fe670c" class="fa fa-retweet" aria-hidden="true"></i></small>
+
+                    <div>
+                        <div class="inner_collages p-0 pb-2 mbred border-0 w-100 float-left my-1" (click)="showCollegeDetails(item.collegeId)" *ngFor="let item of similarColleges;">
+                            <img [src]="_constanceService.BANNER_BASE_URL+item.banner" alt="" class="w-100 college-list-banner">
+                            <div class="rating">
+                                <ul>
+                                    <li *ngIf="item.rating>0"><i class="fa fa-star" aria-hidden="true"></i></li>
+                                    <li *ngIf="item.rating>1"><i class="fa fa-star" aria-hidden="true"></i></li>
+                                    <li *ngIf="item.rating>2"><i class="fa fa-star" aria-hidden="true"></i></li>
+                                    <li *ngIf="item.rating>3"><i class="fa fa-star" aria-hidden="true"></i></li>
+                                    <li *ngIf="item.rating>4"><i class="fa fa-star" aria-hidden="true"></i></li>
+                                </ul>
+                            </div>
+                            <h6 class="mt-2">{{item.collegeName}}</h6>
+                            <p><i class="fa fa-map-marker" aria-hidden="true"></i>{{item.city}} ,{{item.state}}</p>
+                            <div> <a (click)="$event.stopPropagation();_sharedService.openCoursePopup(item.collegeId)" class="clg-btn cursor-point">Courses</a>
+                                <a (click)="$event.stopPropagation();viewBrocher(item.brochure)" [ngClass]="{'not-allowed': !item.brochure}" class="clg-btn cursor-point">Brochure</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ......Filter..... -->
+                    <!-- <div class=" w-100 float-left">
+                        <h5 class="float-left" style="color: #7398bb">FILTERS</h5>
+                        <small class="float-right">Found 1260 Collages <i style="color: #fe670c" class="fa fa-retweet" aria-hidden="true"></i></small>
+                        <hr class="w-100 float-left">
+                        <div class="filter_child p-3 position-relative">
+                            <h6 class="m-0">STATE</h6>
+                            <div class="iconcloseopen rotates"> <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </div>
+                            <div class="inner_filter d-block">
+                                <form>
+                                    <input class="searchs" type="text" name="search" value="" placeholder="Search">
+                                    <button class="icon_search"><i class="fa fa-search" aria-hidden="true"></i>
+									</button>
+                                </form>
+                                <form action="" class="pt-2">
+                                    <input type="checkbox" name="vehicle1" value="">Kerala
+                                    <br>
+                                    <input type="checkbox" name="vehicle2" value="">Tamil Nadu
+                                    <br>
+                                    <input type="checkbox" name="vehicle2" value="">Andhra Pradhesh
+                                    <br>
+                                    <input type="checkbox" name="vehicle2" value="">Puducherry
+                                    <br>
+                                    <input type="checkbox" name="vehicle3" value="">Karnataka
+                                    <br>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="filter_child p-3 position-relative">
+                            <h6 class="m-0">CITY</h6>
+                            <div class="iconcloseopen rotates"> <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </div>
+                            <div class="inner_filter d-block">
+                                <form>
+                                    <input class="searchs" type="text" name="search" value="" placeholder="Search">
+                                    <button class="icon_search"><i class="fa fa-search" aria-hidden="true"></i>
+									</button>
+                                </form>
+                                <form action="" class="pt-2">
+                                    <input type="checkbox" name="vehicle1" value="">Ernmakulam
+                                    <br>
+                                    <input type="checkbox" name="vehicle2" value="">Thiruvananthapuram
+                                    <br>
+                                    <input type="checkbox" name="vehicle2" value="">Kollam
+                                    <br>
+                                    <input type="checkbox" name="vehicle2" value="">Pathanamthitta
+                                    <br>
+                                    <input type="checkbox" name="vehicle3" value="">Kasargod
+                                    <br>
+                                    <input type="checkbox" name="vehicle3" value="">Thrissur
+                                    <br>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="filter_child p-3 position-relative">
+                            <h6 class="m-0">COURSES</h6>
+                            <div class="iconcloseopen"> <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </div>
+                            <div class="inner_filter">
+                                <form>
+                                    <input class="searchs" type="text" name="search" value="" placeholder="Search">
+                                    <button class="icon_search"><i class="fa fa-search" aria-hidden="true"></i>
+									</button>
+                                </form>
+                                <form action="" class="pt-2">
+                                    <input type="checkbox" name="vehicle1" value="">LOREM
+                                    <br>
+                                    <input type="checkbox" name="vehicle2" value="">LOREM
+                                    <br>
+                                    <input type="checkbox" name="vehicle2" value="">LOREM
+                                    <br>
+                                    <input type="checkbox" name="vehicle2" value="">LOREM
+                                    <br>
+                                    <input type="checkbox" name="vehicle3" value="">LOREM
+                                    <br>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="filter_child p-3 position-relative">
+                            <h6 class="m-0">SPECIALISATION</h6>
+                            <div class="iconcloseopen"> <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </div>
+                            <div class="inner_filter">
+                                <form>
+                                    <input class="searchs" type="text" name="search" value="" placeholder="Search">
+                                    <button class="icon_search"><i class="fa fa-search" aria-hidden="true"></i>
+									</button>
+                                </form>
+                                <form action="" class="pt-2">
+                                    <input type="checkbox" name="vehicle1" value="">LOREM
+                                    <br>
+                                    <input type="checkbox" name="vehicle2" value="">LOREM
+                                    <br>
+                                    <input type="checkbox" name="vehicle2" value="">LOREM
+                                    <br>
+                                    <input type="checkbox" name="vehicle2" value="">LOREM
+                                    <br>
+                                    <input type="checkbox" name="vehicle3" value="">LOREM
+                                    <br>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="filter_child p-3 position-relative">
+                            <h6 class="m-0">RATING</h6>
+                            <div class="iconcloseopen"> <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </div>
+                            <div class="inner_filter">
+                                <form>
+                                    <input class="searchs" type="text" name="search" value="" placeholder="Search">
+                                    <button class="icon_search"><i class="fa fa-search" aria-hidden="true"></i>
+									</button>
+                                </form>
+                                <form action="" class="pt-2">
+                                    <input type="checkbox" name="vehicle1" value="">LOREM
+                                    <br>
+                                    <input type="checkbox" name="vehicle2" value="">LOREM
+                                    <br>
+                                    <input type="checkbox" name="vehicle2" value="">LOREM
+                                    <br>
+                                    <input type="checkbox" name="vehicle2" value="">LOREM
+                                    <br>
+                                    <input type="checkbox" name="vehicle3" value="">LOREM
+                                    <br>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="filter_child p-3 position-relative">
+                            <h6 class="m-0">TYPE</h6>
+                            <div class="iconcloseopen"> <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </div>
+                            <div class="inner_filter">
+                                <form>
+                                    <input class="searchs" type="text" name="search" value="" placeholder="Search">
+                                    <button class="icon_search"><i class="fa fa-search" aria-hidden="true"></i>
+									</button>
+                                </form>
+                                <form action="" class="pt-2">
+                                    <input type="checkbox" name="vehicle1" value="">LOREM
+                                    <br>
+                                    <input type="checkbox" name="vehicle2" value="">LOREM
+                                    <br>
+                                    <input type="checkbox" name="vehicle2" value="">LOREM
+                                    <br>
+                                    <input type="checkbox" name="vehicle2" value="">LOREM
+                                    <br>
+                                    <input type="checkbox" name="vehicle3" value="">LOREM
+                                    <br>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="filter_child p-3 position-relative">
+                            <h6 class="m-0">BUDGET</h6>
+                            <div class="iconcloseopen"> <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </div>
+                            <div class="inner_filter">
+                                <form>
+                                    <input class="searchs" type="text" name="search" value="" placeholder="Search">
+                                    <button class="icon_search"><i class="fa fa-search" aria-hidden="true"></i>
+									</button>
+                                </form>
+                                <form action="" class="pt-2">
+                                    <input type="checkbox" name="vehicle1" value="">LOREM
+                                    <br>
+                                    <input type="checkbox" name="vehicle2" value="">LOREM
+                                    <br>
+                                    <input type="checkbox" name="vehicle2" value="">LOREM
+                                    <br>
+                                    <input type="checkbox" name="vehicle2" value="">LOREM
+                                    <br>
+                                    <input type="checkbox" name="vehicle3" value="">LOREM
+                                    <br>
+                                </form>
+                            </div>
+                            <input type="submit" class="clg-btn mt-2" name="" value="Apply filer" placeholder="">
+
+
+                        </div>
+                    </div> -->
+                </div>
+
+            </div>
+            <div class="col-12 col-lg-9">
+                <div class="heading_collage">
+                    <div class="float-none float-md-left">
+                        <h5 class="text-uppercase">{{collegeDetails.collegeName}}</h5>
+                        <div class="float-none float-md-right">
+                            <div class="rating">
+                                <ul class="" *ngIf="collegeDetails.ratingInfo&&collegeDetails.ratingInfo.rating">
+                                    <li><i class="fa fa-star" aria-hidden="true" *ngIf="collegeDetails.ratingInfo.rating>0"></i></li>
+                                    <li><i class="fa fa-star" aria-hidden="true" *ngIf="collegeDetails.ratingInfo.rating>1"></i></li>
+                                    <li><i class="fa fa-star" aria-hidden="true" *ngIf="collegeDetails.ratingInfo.rating>2"></i></li>
+                                    <li><i class="fa fa-star" aria-hidden="true" *ngIf="collegeDetails.ratingInfo.rating>3"></i></li>
+                                    <li><i class="fa fa-star" aria-hidden="true" *ngIf="collegeDetails.ratingInfo.rating>4"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-100 float-left mb-3">
+                    <div class="row">
+                        <div class=" col-6 col-lg-3">
+                            <img [src]="_constanceService.LOGO_BASE_URL+collegeDetails.logo" alt="" height="150px" width="100%" style="object-fit: cover; border:1px solid #dedede;">
+                        </div>
+                        <div class=" col-12 col-lg-9">
+                            <img [src]="_constanceService.BANNER_BASE_URL+collegeDetails.banner" alt="" height="150px" width="100%" style="object-fit: cover; border:1px solid #dedede;">
+                        </div>
+                    </div>
+                </div>
+                <div class="w-100 float-left my-1">
+                    <div class="inner_abouts w-100 float-left  p-3" style="border:1px solid #dedede">
+                        <h5 class="w-100 filter_det" data-id="4" style="color: #ff0000">ABOUT COLLAGE: <i class="text-dark float-right fa fa-plus" aria-hidden="true"></i></h5>
+                        <div class="inner_det d-block" id="4">
+                            <P class="f5">{{collegeDetails.description}}</P>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-100 float-left p-3 my-2 " style="background-color: #dedede;">
+                    <h5 class="w-100 filter_det" data-id="2" style="color: #ff0000">CONTACT: <i class="text-dark float-right fa fa-plus" aria-hidden="true"></i></h5>
+                    <div class="inner_det d-block" id="2">
+                        <P class="">
+                            <B>Sankar Nagar, Mattoor,<br>
+								Kalady P.O.,<br>
+								Ernakulam – 683 574</B>
+                        </P>
+                        <p>Website: <a href="www.ssc.edu.in">{{collegeDetails.website}}</a>
+                            <br>Email: <a href="mailto:{{collegeDetails.emailId}}">{{collegeDetails.emailId}}</a>
+                            <br>Ph: <a href="tel:{{collegeDetails.contactNo}}">{{collegeDetails.contactNo}}</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="w-100 float-left p-3 my-2 " style="border:1px solid #dedede;">
+                    <h5 class="w-100 float-left filter_det" data-id="5" style="color: #ff0000">COURSES: <i class="text-dark float-right fa fa-plus" aria-hidden="true"></i></h5>
+                    <div class="inner_det d-block w-100 float-left" id="5">
+
+
+
+                        <div class="row" *ngIf="collegeDetails.courses">
+                            <div class="col-lg-6" *ngFor="let item of collegeDetails.courses; let i = index">
+                                <div class="p-3 mb-4" style="border:1px solid #dedede;">
+                                    <p class="font-weight-bold"><span>{{item.courseName}} - [{{item.abbreviation}}]</span>
+                                        <br>Fees: <span style="color: #1f326a">₹29,000.00</span>
+                                        <br>
+                                        <br>Duration: <span style="color: #1f326a">2 Years</span>
+                                        <br> <a href="#" class="btn_new mt-1 d-inline-block">Apply</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="w-100  float-left p-3 my-2" style="border:1px solid #dedede;">
+                    <h5 class="w-100 filter_det" data-id="1" style="color: #ff0000">FACILITIES: <i class="text-dark float-right fa fa-plus" aria-hidden="true"></i></h5>
+
+                    <div class="inner_det d-block" id="1">
+                        <div class="row">
+                            <div class="col-6 col-md-3 col-lg-3 col-xl-2 mb-3">
+                                <div class="inner_facility">
+                                    <img src="assets/images/iconfes/01.png" alt="">
+                                    <h5>Boys Hostel </h5>
+                                </div>
+
+                            </div>
+
+                            <div class="col-6 col-md-3 col-lg-3 col-xl-2 mb-3">
+                                <div class="inner_facility">
+                                    <img src="assets/images/iconfes/02.png" alt="">
+                                    <h5>Girls Hostel </h5>
+                                </div>
+
+                            </div>
+
+                            <div class="col-6 col-md-3 col-lg-3 col-xl-2 mb-3">
+                                <div class="inner_facility">
+                                    <img src="assets/images/iconfes/03.png" alt="">
+                                    <h5>Asso. Hospital Availability</h5>
+                                </div>
+
+                            </div>
+
+                            <div class="col-6 col-md-3 col-lg-3 col-xl-2 mb-3">
+                                <div class="inner_facility">
+                                    <img src="assets/images/iconfes/04.png" alt="">
+                                    <h5>GYM</h5>
+                                </div>
+
+                            </div>
+
+                            <div class="col-6 col-md-3 col-lg-3 col-xl-2 mb-3">
+                                <div class="inner_facility">
+                                    <img src="assets/images/iconfes/05.png" alt="">
+                                    <h5>LIBRARY</h5>
+                                </div>
+
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-3 col-xl-2 mb-3">
+                                <div class="inner_facility">
+                                    <img src="assets/images/iconfes/06.png" alt="">
+                                    <h5>CO-EDUCATION</h5>
+                                </div>
+
+                            </div>
+
+                            <div class="col-6 col-md-3 col-lg-3 col-xl-2 mb-3">
+                                <div class="inner_facility">
+                                    <img src="assets/images/iconfes/07.png" alt="">
+                                    <h5>SPORTS</h5>
+                                </div>
+
+                            </div>
+
+                            <div class="col-6 col-md-3 col-lg-3 col-xl-2 mb-3">
+                                <div class="inner_facility">
+                                    <img src="assets/images/iconfes/08.png" alt="">
+                                    <h5>IT INFRASTRUCTURE</h5>
+                                </div>
+
+                            </div>
+
+
+                            <div class="col-6 col-md-3 col-lg-3 col-xl-2 mb-3">
+                                <div class="inner_facility">
+                                    <img src="assets/images/iconfes/09.png" alt="">
+                                    <h5>Auditorium</h5>
+                                </div>
+
+                            </div>
+
+                            <div class="col-6 col-md-3 col-lg-3 col-xl-2 mb-3">
+                                <div class="inner_facility">
+                                    <img src="assets/images/iconfes/10.png" alt="">
+                                    <h5>Medical Facility</h5>
+                                </div>
+
+                            </div>
+
+                            <div class="col-6 col-md-3 col-lg-3 col-xl-2 mb-3">
+                                <div class="inner_facility">
+                                    <img src="assets/images/iconfes/11.png" alt="">
+                                    <h5>WI-FI</h5>
+                                </div>
+
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-3 col-xl-2 mb-3">
+                                <div class="inner_facility">
+                                    <img src="assets/images/iconfes/12.png" alt="">
+                                    <h5>TRANSPORTATION</h5>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="w-100 float-left my-1">
+                    <div class="inner_abouts w-100 float-left p-3" style="border:1px solid #dedede">
+                        <h5 class="w-100 float-left filter_det " data-id="3" style="color: #ff0000">GALLLERY IMAGE: <i class="text-dark float-right fa fa-plus" aria-hidden="true"></i></h5>
+                        <div class="inner_det d-block w-100 float-left" id="3">
+                            <div class="row gallery">
+                                <div class="col-6 col-mg-6 col-lg-3 mb-4" *ngFor="let item of collegeDetails.galleries; let i = index">
+                                    <div class="gallery_inner gallery position-relative">
+                                        <!-- <a href="_constanceService.IMAGE_BASE_URL+item.image" class="big"> -->
+                                        <a class="big">
+
+                                            <img [src]="_constanceService.IMAGE_BASE_URL+item.image" alt="" title="Image 4" width="100%" height="100%">
+                                            <div class="zoomicon">
+                                                <i class="fa fa-search" aria-hidden="true"></i>
+                                            </div>
+                                        </a>
+
+
+                                    </div>
+
+                                </div>
+                                <!-- <div class="col-6 col-mg-6 col-lg-3 mb-4">
+                                    <div class="gallery_inner gallery position-relative">
+                                        <a href="assets/images/gallery.jpg" class="big">
+
+                                            <img src="assets/images/gallery.jpg" alt="" title="Image 4" width="100%" height="100%">
+                                            <div class="zoomicon">
+                                                <i class="fa fa-search" aria-hidden="true"></i>
+                                            </div>
+                                        </a>
+
+
+                                    </div>
+
+                                </div>
+                                <div class="col-6 col-mg-6 col-lg-3 mb-4">
+                                    <div class="gallery_inner gallery position-relative">
+                                        <a href="assets/images/gallery.jpg" class="big">
+
+                                            <img src="assets/images/gallery.jpg" alt="" title="Image 4" width="100%" height="100%">
+                                            <div class="zoomicon">
+                                                <i class="fa fa-search" aria-hidden="true"></i>
+                                            </div>
+                                        </a>
+
+
+                                    </div>
+
+                                </div>
+                                <div class="col-6 col-mg-6 col-lg-3 mb-4">
+                                    <div class="gallery_inner gallery position-relative">
+                                        <a href="assets/images/gallery.jpg" class="big">
+
+                                            <img src="assets/images/gallery.jpg" alt="" title="Image 4" width="100%" height="100%">
+                                            <div class="zoomicon">
+                                                <i class="fa fa-search" aria-hidden="true"></i>
+                                            </div>
+                                        </a>
+
+
+                                    </div>
+
+                                </div>
+                                <div class="col-6 col-mg-6 col-lg-3 mb-4">
+                                    <div class="gallery_inner gallery position-relative">
+                                        <a href="assets/images/gallery.jpg" class="big">
+
+                                            <img src="assets/images/gallery.jpg" alt="" title="Image 4" width="100%" height="100%">
+                                            <div class="zoomicon">
+                                                <i class="fa fa-search" aria-hidden="true"></i>
+                                            </div>
+                                        </a>
+
+
+                                    </div>
+
+                                </div>
+                                <div class="col-6 col-mg-6 col-lg-3 mb-4">
+                                    <div class="gallery_inner gallery position-relative">
+                                        <a href="assets/images/gallery.jpg" class="big">
+
+                                            <img src="assets/images/gallery.jpg" alt="" title="Image 4" width="100%" height="100%">
+                                            <div class="zoomicon">
+                                                <i class="fa fa-search" aria-hidden="true"></i>
+                                            </div>
+                                        </a>
+
+
+                                    </div>
+
+                                </div>
+                                <div class="col-6 col-mg-6 col-lg-3 mb-4">
+                                    <div class="gallery_inner gallery position-relative">
+                                        <a href="assets/images/gallery.jpg" class="big">
+
+                                            <img src="assets/images/gallery.jpg" alt="" title="Image 4" width="100%" height="100%">
+                                            <div class="zoomicon">
+                                                <i class="fa fa-search" aria-hidden="true"></i>
+                                            </div>
+                                        </a>
+
+
+                                    </div>
+
+                                </div>
+                                <div class="col-6 col-mg-6 col-lg-3 mb-4">
+                                    <div class="gallery_inner gallery position-relative">
+                                        <a href="assets/images/gallery.jpg" class="big">
+
+                                            <img src="assets/images/gallery.jpg" alt="" title="Image 4" width="100%" height="100%">
+                                            <div class="zoomicon">
+                                                <i class="fa fa-search" aria-hidden="true"></i>
+                                            </div>
+                                        </a>
+
+
+                                    </div>
+
+                                </div> -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-100 float-left my-1">
+                    <div class="inner_abouts w-100 float-left  p-3" style="border:1px solid #dedede">
+                        <h5 class="w-100 filter_det" data-id="9" style="color: #ff0000">Admission Details: <i class="text-dark float-right fa fa-plus" aria-hidden="true"></i></h5>
+                        <div class="inner_det d-none" id="9">
+                            <P class="f5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </P>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="w-100 float-left my-1">
+                    <div class="inner_abouts w-100 float-left  p-3" style="border:1px solid #dedede">
+                        <h5 class="w-100 filter_det" data-id="10" style="color: #ff0000">Mode of Taking Admission: <i class="text-dark float-right fa fa-plus" aria-hidden="true"></i></h5>
+                        <div class="inner_det d-none" id="10">
+                            <P class="f5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </P>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+<section class="w-100 float-left bg-2 py-5" style="border-bottom: 4px solid red">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 col-l-5 mb-3 mb-md-0">
+                <ul class="footerlistmain m-0 p-0">
+                    <li>
+                        <h5>TOP COLLAGES</h5>
+                    </li>
+                    <li><a href="#">M.B.A</a>
+                    </li>
+                    <li><a href="#">B.TECH/B.E</a>
+                    </li>
+                    <li><a href="#">MCA</a>
+                    </li>
+                    <li><a href="#">BCA</a>
+                    </li>
+                    <li><a href="#">B.TECH</a>
+                    </li>
+                    <li><a href="#">MA</a>
+                    </li>
+                    <li><a href="#">BA</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-l-5 mb-3 mb-md-0">
+                <ul class="footerlistmain m-0 p-0">
+                    <li>
+                        <h5>TOP UNIVERSITIES</h5>
+                    </li>
+                    <li><a href="#">ENGINEERING</a>
+                    </li>
+                    <li><a href="#">MANAGEMENT</a>
+                    </li>
+                    <li><a href="#">MEDICAL</a>
+                    </li>
+                    <li><a href="#">LAW</a>
+                    </li>
+                    <li><a href="#">COMMERCE</a>
+                    </li>
+                    <li><a href="#">SCIENCE</a>
+                    </li>
+                    <li><a href="#">ARTS</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-l-5 mb-3 mb-md-0">
+                <ul class="footerlistmain m-0 p-0">
+                    <li>
+                        <h5>TOP EXAM</h5>
+                    </li>
+                    <li><a href="#">CAT</a>
+                    </li>
+                    <li><a href="#">GATE</a>
+                    </li>
+                    <li><a href="#">IIT-JEE</a>
+                    </li>
+                    <li><a href="#">AIPMT</a>
+                    </li>
+                    <li><a href="#">XAT</a>
+                    </li>
+                    <li><a href="#">CLAT</a>
+                    </li>
+                    <li><a href="#">MAT</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-l-5 mb-3 mb-md-0">
+                <ul class="footerlistmain m-0 p-0">
+                    <li>
+                        <h5>STUDY ABROAD</h5>
+                    </li>
+                    <li><a href="#">CANADA</a>
+                    </li>
+                    <li><a href="#">USA</a>
+                    </li>
+                    <li><a href="#">UK</a>
+                    </li>
+                    <li><a href="#">AUSTRALIA</a>
+                    </li>
+                    <li><a href="#">GERMANY</a>
+                    </li>
+                    <li><a href="#">SWEDEN</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-l-5 mb-3 mb-md-0">
+                <ul class="footerlistmain m-0 p-0">
+                    <li>
+                        <h5>OTHER LINKS</h5>
+                    </li>
+                    <li><a href="#">ABOUT COLLAGEDUNIA</a>
+                    </li>
+                    <li><a href="#">CONTACT US</a>
+                    </li>
+                    <li><a href="#">ADVERTISING</a>
+                    </li>
+                    <li><a href="#">CAREERS</a>
+                    </li>
+                    <li><a href="#">PRIVACY</a>
+                    </li>
+                    <li><a href="#">TERMS & CONDITION</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

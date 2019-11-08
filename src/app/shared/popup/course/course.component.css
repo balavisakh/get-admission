@@ -1,0 +1,18 @@
+.modal-body {
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+.row-spliter {
+    padding: 10px;
+}
+
+.modal-header {
+    background: #fb3d01;
+    color: white;
+}
+
+.modal-header h4 {
+    text-align: center;
+    width: 100%;
+}

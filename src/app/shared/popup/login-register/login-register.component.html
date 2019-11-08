@@ -1,0 +1,15 @@
+<div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title" *ngIf="_sharedService.login">Login</h4>
+            <h4 class="modal-title" *ngIf="!_sharedService.login">Register</h4>
+        </div>
+        <div class="modal-body">
+            <app-login *ngIf="_sharedService.login"></app-login>
+            <app-register *ngIf="!_sharedService.login"></app-register>
+        </div>
+    </div>
+
+</div>

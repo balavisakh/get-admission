@@ -1,0 +1,61 @@
+<main class="login-form">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="card">
+                    <!-- <div class="card-header">Register</div> -->
+                    <div class="card-body">
+                        <form name="loginForm" [formGroup]="loginForm">
+                            <div class="form-group row">
+                                <label for="email_address" class="col-md-4 col-form-label text-md-right">User Name</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="email_address" class="form-control" formControlName="userName" name="email-address" required autofocus>
+                                    <div class="text-danger" *ngIf="loginForm.controls['userName'].hasError('required')&&(loginForm.controls.userName?.dirty ||loginForm.controls.userName?.touched)">
+                                        User Name is required.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div *ngIf="userName.errors.required">
+                                User Name is required.
+                            </div> -->
+
+                            <div class="form-group row">
+                                <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                                <div class="col-md-6">
+                                    <input type="password" id="password" class="form-control" formControlName="password" name="password" required>
+                                    <div class="text-danger" *ngIf="loginForm.controls['password'].hasError('required')&&(loginForm.controls.password?.dirty ||loginForm.controls.password?.touched)">
+                                        Password is required.
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-md-6 offset-md-4">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="remember"> Remember Me
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 offset-md-4">
+                                <button (click)="login()" [disabled]="!loginForm.valid" class="btn btn-primary">
+                                    login
+                                </button>
+                                <a (click)="_sharedService.login=false" href="#" class="btn btn-link">
+                                    Register
+                                </a>
+                            </div>
+                            <div class="text-danger" *ngIf="errorMsg">
+                                {{errorMsg}}
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>

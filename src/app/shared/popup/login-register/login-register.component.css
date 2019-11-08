@@ -1,0 +1,13 @@
+.modal-dialog {
+    overflow: hidden;
+}
+
+.modal-header {
+    background: #fb3d01;
+    color: white;
+}
+
+.modal-header h4 {
+    text-align: center;
+    width: 100%;
+}
